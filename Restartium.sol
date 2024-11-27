@@ -25,7 +25,7 @@ contract Coin is ERC20 {
     }
 }
 
-contract Hospium {
+contract Restartium {
 
     Vanilla dex;
     ERC20 public token;
@@ -35,14 +35,14 @@ contract Hospium {
     uint256 public inputToLP;
     uint256 public swappedInput;
 
-    uint private constant MAX_SUPPLY= 8_000_000;
-    uint private constant LP_FACTOR= 3;
+    uint private constant MAX_SUPPLY= 20_000;
+    uint private constant LP_FACTOR= 4;
     
-    uint private constant MAX_PRICE= 50;
+    uint private constant MAX_PRICE= 1_000;
     uint private constant START_PRICE= 1;
 
-    uint private constant MAX_SWAP_IN= 10_000;
-    uint private constant NO_SLIPAGE_THRESHOLD= 100;
+    uint private constant MAX_SWAP_IN= 1_000;
+    uint private constant NO_SLIPAGE_THRESHOLD= 10;
 
     constructor(Vanilla _dex,string memory name, string memory symbol,address allowedTradeIn) {
         dex= _dex;

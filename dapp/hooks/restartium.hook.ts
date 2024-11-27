@@ -1,12 +1,12 @@
 import Web3 from "web3";
-import HOSPIUM_ABI from "../lib/hospium.abi.json";
+import RESTARTIUM_ABI from "../lib/restartium.abi.json";
 import TOKEN_ABI from "../lib/token.abi.json";
 import { useWalletContext } from "../contexts/wallet.context";
 import { Contract } from "web3-eth-contract";
 import { useEffect, useMemo, useState } from "react";
 import BigNumber from "bignumber.js";
 
-export interface HospiumInterface {
+export interface RestartiumInterface {
   reload: () => void;
   remainingSupply?: BigNumber;
   burnedInput?: BigNumber;
@@ -23,10 +23,10 @@ export interface HospiumInterface {
   balanceOfInputToken?: BigNumber;
 }
 
-export function useHospium(): HospiumInterface {
+export function useRestartium(): RestartiumInterface {
   const { address, chain, block } = useWalletContext();
   const web3 = new Web3(Web3.givenProvider);
-  const hospiumContractAddress = "0x74FA4eb5a2b312E0e877f8B862641639DDB75F65";
+  const restartiumContractAddress = "0x74FA4eb5a2b312E0e877f8B862641639DDB75F65";
 
   const [remainingSupply, setRemainingSupply] = useState<BigNumber>();
   const [burnedInput, setBurnedInput] = useState<BigNumber>();
@@ -41,7 +41,7 @@ export function useHospium(): HospiumInterface {
   const [balanceOfInputToken, setBalanceOfInputToken] = useState<BigNumber>();
 
   function createContract(): Contract {
-    return new web3.eth.Contract(HOSPIUM_ABI as any, hospiumContractAddress);
+    return new web3.eth.Contract(RESTARTIUM_ABI as any, restartiumContractAddress);
   }
 
   function errorHandler(e: any) {}
@@ -168,7 +168,7 @@ export function useHospium(): HospiumInterface {
     return new BigNumber(
       web3.utils.fromWei(
         await contract.methods
-          .allowance(address, hospiumContractAddress)
+          .allowance(address, restartiumContractAddress)
           .call(),
         "ether"
       )
@@ -180,7 +180,7 @@ export function useHospium(): HospiumInterface {
     setIsBuying(true);
     const contract = new web3.eth.Contract(TOKEN_ABI as any, inputTokenAddress);
     return contract.methods
-      .approve(hospiumContractAddress, web3.utils.toWei(amount, "ether"))
+      .approve(restartiumContractAddress, web3.utils.toWei(amount, "ether"))
       .send({
         from: address,
       })
