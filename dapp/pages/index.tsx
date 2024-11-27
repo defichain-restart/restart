@@ -189,23 +189,23 @@ function HomeContent() {
             <div className="card-body">
               <h2 className="card-title">Statistics</h2>
               <p>
-                Total supply: {formatNumber(20_000)}{" "}
+                Total supply: {formatNumber(2_500_000)}{" "}
                 <strong className="text-primary">RESTART</strong>
               </p>
               <p>
                 Remaining supply:{" "}
                 {formatNumber(remainingSupply?.toNumber() ?? 0)}{" "}
                 <strong className="text-primary">RESTART</strong> (
-                {remainingSupply?.div(20_000).times(100).toFixed(8)}
+                {remainingSupply?.div(2_500_000).times(100).toFixed(8)}
                 %)
               </p>
               <p>
-                Initial price: 1{" "}
+                Initial price: 0.01{" "}
                 <strong className="text-secondary">DUSD</strong> /{" "}
                 <strong className="text-primary">RESTART</strong>
               </p>
               <p>
-                Max price: 1000 <strong className="text-secondary">DUSD</strong> /{" "}
+                Max price: 10 <strong className="text-secondary">DUSD</strong> /{" "}
                 <strong className="text-primary">RESTART</strong>
               </p>
               <p>Burn rate: 75%</p>
