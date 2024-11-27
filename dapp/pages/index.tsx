@@ -189,14 +189,14 @@ function HomeContent() {
             <div className="card-body">
               <h2 className="card-title">Statistics</h2>
               <p>
-                Total supply: {formatNumber(8_000_000)}{" "}
+                Total supply: {formatNumber(20_000)}{" "}
                 <strong className="text-primary">RESTART</strong>
               </p>
               <p>
                 Remaining supply:{" "}
                 {formatNumber(remainingSupply?.toNumber() ?? 0)}{" "}
                 <strong className="text-primary">RESTART</strong> (
-                {remainingSupply?.div(8_000_000).times(100).toFixed(8)}
+                {remainingSupply?.div(20_000).times(100).toFixed(8)}
                 %)
               </p>
               <p>
