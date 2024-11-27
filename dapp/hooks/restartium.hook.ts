@@ -26,7 +26,7 @@ export interface RestartiumInterface {
 export function useRestartium(): RestartiumInterface {
   const { address, chain, block } = useWalletContext();
   const web3 = new Web3(Web3.givenProvider);
-  const restartiumContractAddress = "0x74FA4eb5a2b312E0e877f8B862641639DDB75F65";
+  const restartiumContractAddress = "0xb9b3f0974122c1ECDD1731Bdb25A7986BcaC4D70";
 
   const [remainingSupply, setRemainingSupply] = useState<BigNumber>();
   const [burnedInput, setBurnedInput] = useState<BigNumber>();
