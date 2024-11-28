@@ -35,11 +35,11 @@ contract Restartium {
     uint256 public inputToLP;
     uint256 public swappedInput;
 
-    uint private constant MAX_SUPPLY= 2_500_000;
+    uint private constant MAX_SUPPLY= 3_500_000;
     uint private constant LP_FACTOR= 4;
     
-    uint private constant MAX_PRICE= 10*1e18;
-    uint private constant START_PRICE= 1*1e16;
+    uint256 private constant MAX_PRICE= 10*1e18;
+    uint256 private constant START_PRICE= 1*1e16;
 
     uint private constant MAX_SWAP_IN= 1_000;
     uint private constant NO_SLIPAGE_THRESHOLD= 10;
@@ -67,7 +67,7 @@ contract Restartium {
         if(input < NO_SLIPAGE_THRESHOLD*(1e18)) {
             output= baseOutput;
         } else {
-            uint256 denomSlip= (START_PRICE*total + (MAX_PRICE-START_PRICE)*distributed+baseOutput)/1e18;
+            uint256 denomSlip= (START_PRICE*total + (MAX_PRICE-START_PRICE)*(distributed+baseOutput))/1e18;
             uint256 slipageOutput= (input*total)/denomSlip;
             output= (baseOutput+slipageOutput)/2;
         }

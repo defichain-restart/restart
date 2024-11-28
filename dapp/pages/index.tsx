@@ -138,7 +138,7 @@ function HomeContent() {
                 <input
                   type="number"
                   placeholder="Amount"
-                  className="input input-bordered input-primary w-full mr-4"
+                  className="input input-bordered input-primary w-full mr-4 bg-slate-100"
                   onWheel={(e) => e.currentTarget.blur()}
                   value={amount}
                   onChange={(e) => handleAmountChanged(e.target.value)}
@@ -189,14 +189,14 @@ function HomeContent() {
             <div className="card-body">
               <h2 className="card-title">Statistics</h2>
               <p>
-                Total supply: {formatNumber(2_500_000)}{" "}
+                Total supply: {formatNumber(3_500_000)}{" "}
                 <strong className="text-primary">RESTART</strong>
               </p>
               <p>
                 Remaining supply:{" "}
                 {formatNumber(remainingSupply?.toNumber() ?? 0)}{" "}
                 <strong className="text-primary">RESTART</strong> (
-                {remainingSupply?.div(2_500_000).times(100).toFixed(8)}
+                {remainingSupply?.div(3_500_000).times(100).toFixed(8)}
                 %)
               </p>
               <p>
@@ -290,6 +290,7 @@ function HomeContent() {
             <p>
               Anyone buying or interacting with Restartium is doing so at their own
               risk. We take no responsibility whatsoever.
+              $RESTART has no usecase beside showing your support of the defichain restart.
             </p>
           </div>
         </div>
