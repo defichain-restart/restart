@@ -240,7 +240,7 @@ function HomeContent() {
               could go up or down or sideways.
             </p>
             <p>
-              Each purchase increases the coin price up to a cap of 1000{" "}
+              Each purchase increases the coin price up to a cap of 10{" "}
               <strong className="text-secondary">DUSD</strong>.
             </p>
             <p>
