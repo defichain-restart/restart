@@ -235,6 +235,7 @@ function HomeContent() {
         <div className="card mx-4 md:w-128 bg-slate-100 shadow-xl mt-16">
           <div className="card-body">
             <h2 className="card-title">Infos</h2>
+            <p>Note that you need <strong className="text-secondary">DUSD</strong>, not DUSD/v1</p>
             <p>
               Each purchase increases the coin price up to a cap of 10{" "}
               <strong className="text-secondary">DUSD</strong>.
