@@ -236,10 +236,6 @@ function HomeContent() {
           <div className="card-body">
             <h2 className="card-title">Infos</h2>
             <p>
-              In <strong className="text-primary">$RESTART</strong> we trust. It
-              could go up or down or sideways.
-            </p>
-            <p>
               Each purchase increases the coin price up to a cap of 10{" "}
               <strong className="text-secondary">DUSD</strong>.
             </p>
