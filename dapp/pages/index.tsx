@@ -149,7 +149,7 @@ function HomeContent() {
                 <p>
                   Estimation: {estimatedReceivedTokens?.toFixed(2) ?? ""}{" "}
                   <strong className="text-primary">RESTART</strong>
-                  {"  "}( {(amount/estimatedReceivedTokens).toFixed(2)} <strong className="text-secondary">DUSD</strong>/<strong className="text-primary">RESTART</strong> )
+                  {"  "}( {(+amount/+estimatedReceivedTokens).toFixed(2)} <strong className="text-secondary">DUSD</strong> / <strong className="text-primary">RESTART</strong> )
                 </p>
               ) : (
                 <p>
